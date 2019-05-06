@@ -1,5 +1,5 @@
 var header = document.querySelector('header');
-var section = document.querySelector('section');
+var section = document.getElementById('all');
 var data;
 
 var requestURL = 'https://raw.githubusercontent.com/Merseong/alcohol-json-library/master/json/yakju.json';
