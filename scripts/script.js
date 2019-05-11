@@ -1,18 +1,35 @@
 var header = document.querySelector('header');
 var section = document.getElementById('all');
+
+var linklist;
+var alcURL;
 var data;
 
-var requestURL = 'https://raw.githubusercontent.com/Merseong/alcohol-json-library/master/json/yakju.json';
+// call linklist.json
+var requestURL = 'https://raw.githubusercontent.com/Merseong/alcohol-json-library/master/linklist.json';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
 request.onload = function() 
 {
-    data = request.response;
-    myHeader(data);
-    mySection(data);
+    linklist = request.response;
+    alcURL = linklist.link;
+
+    // call (category).json
+    var alcRequest = new XMLHttpRequest();
+    alcRequest.open('GET', alcURL + 'yakju.json');
+    alcRequest.responseType = 'json';
+    alcRequest.send();
+    alcRequest.onload = function() 
+    {
+        data = alcRequest.response;
+        myHeader(data);
+        mySection(data);
+    }
 }
+
+
 
 function myHeader(jsonObj) 
 {
