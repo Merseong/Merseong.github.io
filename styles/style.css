@@ -60,3 +60,11 @@ html, body {
 section article {
     border: 1px solid black;
 }
+
+section article:hover {
+    background: rgb(201, 201, 201);
+}
+
+section article:active {
+    background: rgb(177, 177, 177);
+}
