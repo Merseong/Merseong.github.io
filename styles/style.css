@@ -1,32 +1,26 @@
-h1 {
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
-header {
-    padding: 15px;
-    text-align: center;
-    background: rgb(88, 19, 42);
-    color: white;
-}
-
-section {
-    float: left;
-    width: 30%;
+/*배경*/
+#backGround {
+    background: rgb(82, 29, 41);
+    width: 100%;
     height: 100%;
 }
 
-#include {
-    display: inline-block;
-    width: 100%;
-    height: 40em;
-    align-content: center;
+/*상단 바*/
+#topBar {
+    padding: 1em;
+    color: white;
+    text-align: center;
+    height: 12%;
 }
 
-#siteName {
-    font-size: 3em;
+#topBar h1 {
+    margin: 0;
+    font-size: 2.5em;
 }
 
 #menuButton {
@@ -37,14 +31,29 @@ section {
     float: right;
 }
 
-#all {
-    overflow: scroll;
+/*내용*/
+#contents {
+    text-align: center;
+    height: 82%;
 }
 
-.divider {
-    width: 1.5%;
+#contents > div {
+    display: inline-block;
+    width: 31%;
     height: 100%;
-    margin: 0%  0.5% 0% 0.5%;
-    float: left;
-    background-color: #58132a;
+    margin: 0.5%;
+    color: white;
 }
+
+#contents h1 {
+    margin: 2%;
+}
+
+#contents section {
+    height: 92%;
+    overflow:scroll;
+    background: white;
+    color: black;
+}
+
+/*술 개별 article*/

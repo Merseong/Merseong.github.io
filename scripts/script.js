@@ -1,5 +1,5 @@
-var header = document.querySelector('header');
-var section = document.getElementById('all');
+var header = document.getElementById('selectTitle');
+var section = document.getElementById('selectContent');
 
 var linklist;
 var alcURL;
@@ -33,13 +33,7 @@ request.onload = function()
 
 function myHeader(jsonObj) 
 {
-    var myH1 = document.createElement('h1');
-    myH1.textContent = jsonObj.category;
-    header.appendChild(myH1);
-
-    var myPara = document.createElement('p');
-    myPara.textContent = 'Size: ' + jsonObj.alcList.length;
-    header.appendChild(myPara);
+    header.textContent = jsonObj.krCategory + ", " + jsonObj.alcList.length + "개";
 }
 
 function mySection(jsonObj) 
