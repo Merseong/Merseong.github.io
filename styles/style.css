@@ -50,10 +50,13 @@ html, body {
 }
 
 #contents section {
-    height: 92%;
+    height: 91%;
     overflow:scroll;
     background: white;
     color: black;
 }
 
 /*술 개별 article*/
+section article {
+    border: 1px solid black;
+}

@@ -1,5 +1,6 @@
-var header = document.getElementById('selectTitle');
-var section = document.getElementById('selectContent');
+var selHeader = document.getElementById('selectTitle');
+var selSection = document.getElementById('selectContent');
+var catSection = document.getElementById('cateContent');
 
 var linklist;
 var alcURL;
@@ -16,6 +17,11 @@ request.onload = function()
     linklist = request.response;
     alcURL = linklist.link;
 
+    for (var i = 0; i < linklist.matching.length; i++)
+    {
+        categoryAdd(linklist, i);
+    }
+
     // call (category).json
     var alcRequest = new XMLHttpRequest();
     alcRequest.open('GET', alcURL + 'yakju.json');
@@ -24,19 +30,32 @@ request.onload = function()
     alcRequest.onload = function() 
     {
         data = alcRequest.response;
-        myHeader(data);
-        mySection(data);
+        changeHeader(data);
+        printAlcList(data);
     }
 }
 
-
-
-function myHeader(jsonObj) 
+function categoryAdd(jsonObj, i)
 {
-    header.textContent = jsonObj.krCategory + ", " + jsonObj.alcList.length + "개";
+    var myArti = document.createElement('article');
+    var myH2 = document.createElement('h2');
+    var myH3 = document.createElement('h3');
+
+    myH2.textContent = jsonObj.matching[i].kr;
+    myH3.textContent = jsonObj.matching[i].en;
+
+    myArti.appendChild(myH2);
+    myArti.appendChild(myH3);
+
+    catSection.appendChild(myArti);
 }
 
-function mySection(jsonObj) 
+function changeHeader(jsonObj) 
+{
+    selHeader.textContent = jsonObj.krCategory + ", " + jsonObj.alcList.length + "개";
+}
+
+function printAlcList(jsonObj) 
 {
     var sools = jsonObj.alcList;
 
@@ -55,7 +74,7 @@ function mySection(jsonObj)
         myArti.appendChild(myDegree);
         myArti.appendChild(myMade);
 
-        section.appendChild(myArti);
+        selSection.appendChild(myArti);
     }
 }
 
