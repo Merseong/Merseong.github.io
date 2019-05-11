@@ -1,6 +1,6 @@
-var selHeader = document.getElementById('selectTitle');
-var selSection = document.getElementById('selectContent');
-var catSection = document.getElementById('cateContent');
+var selHeader = document.getElementById('alcCate');
+var selSection = document.getElementById('alcList');
+var catSection = document.getElementById('category');
 
 var linklist;
 var alcURL;
@@ -21,10 +21,13 @@ request.onload = function()
     {
         categoryAdd(linklist, i);
     }
+}
 
+function callJson(enName)
+{
     // call (category).json
     var alcRequest = new XMLHttpRequest();
-    alcRequest.open('GET', alcURL + 'yakju.json');
+    alcRequest.open('GET', alcURL + enName + '.json');
     alcRequest.responseType = 'json';
     alcRequest.send();
     alcRequest.onload = function() 
@@ -46,6 +49,9 @@ function categoryAdd(jsonObj, i)
 
     myArti.appendChild(myH2);
     myArti.appendChild(myH3);
+    myArti.onclick = function() {
+        callJson(jsonObj.matching[i].en);
+    }
 
     catSection.appendChild(myArti);
 }
@@ -57,6 +63,10 @@ function changeHeader(jsonObj)
 
 function printAlcList(jsonObj) 
 {
+    while (selSection.firstChild) {
+        selSection.removeChild(selSection.firstChild);
+    }
+
     var sools = jsonObj.alcList;
 
     for (var i = 0; i < sools.length; i++)
