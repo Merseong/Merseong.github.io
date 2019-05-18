@@ -56,6 +56,10 @@ html, body {
     color: black;
 }
 
+#selectAlc {
+    overflow: hidden;
+}
+
 /*술 개별 article*/
 section article {
     border: 1px solid black;

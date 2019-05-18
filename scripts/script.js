@@ -1,6 +1,7 @@
 var selHeader = document.getElementById('alcCate');
 var selSection = document.getElementById('alcList');
 var catSection = document.getElementById('category');
+var alcSection = document.getElementById('selectAlc');
 
 var linklist;
 var alcURL;
@@ -33,9 +34,42 @@ function callJson(enName)
     alcRequest.onload = function() 
     {
         data = alcRequest.response;
-        changeHeader(data);
+        printHeader(data);
         printAlcList(data);
     }
+}
+
+function callAlc(index)
+{
+    var curAlc = data.alcList[index];
+    while (alcSection.firstChild) {
+        alcSection.removeChild(alcSection.firstChild);
+    }
+
+    var myArti = document.createElement('article');
+    var myCate = document.createElement('h2');
+    var myName = document.createElement('h1');
+    var myDegree = document.createElement('h2');
+    var myMade = document.createElement('h2');
+    var myAdd = document.createElement('ul');
+    
+    myCate.textContent = curAlc.classification + ' ' + data.krCategory;
+    myName.textContent = curAlc.alcName;
+    myDegree.textContent = curAlc.alcDegree + '%';
+    myMade.textContent = curAlc.alcMade;
+
+    if (curAlc.additional.siteLink != undefined)
+    {
+        myAdd.innerHTML = myAdd.innerHTML + '<li><a href=\"' + curAlc.additional.siteLink + '\" target=\"_blank\">' + curAlc.additional.siteLink + '</a></li>'
+    }
+
+    myArti.appendChild(myCate);
+    myArti.appendChild(myName);
+    myArti.appendChild(myDegree);
+    myArti.appendChild(myMade);
+    myArti.appendChild(myAdd);
+
+    alcSection.appendChild(myArti);
 }
 
 function categoryAdd(jsonObj, i)
@@ -56,7 +90,7 @@ function categoryAdd(jsonObj, i)
     catSection.appendChild(myArti);
 }
 
-function changeHeader(jsonObj) 
+function printHeader(jsonObj) 
 {
     selHeader.textContent = jsonObj.krCategory + ", " + jsonObj.alcList.length + "개";
 }
@@ -77,12 +111,21 @@ function printAlcList(jsonObj)
         var myMade = document.createElement('p');
 
         myH2.textContent = sools[i].alcName;
-        myDegree.textContent = sools[i].alcDegree;
+        if (sools[i].alcDegree != -1)
+        {
+            myDegree.textContent = sools[i].alcDegree + '%';
+        }
         myMade.textContent = sools[i].alcMade;
 
         myArti.appendChild(myH2);
         myArti.appendChild(myDegree);
         myArti.appendChild(myMade);
+        myArti.onclick = (function() {
+            var currentI = i;
+            return function() { 
+                callAlc(currentI);
+            }
+         })();
 
         selSection.appendChild(myArti);
     }
