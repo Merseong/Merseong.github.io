@@ -2,7 +2,7 @@
 
 군대간 일병 신대성 (전역일은 21년 10월 12일)
 
-# Contribution on Game Development
+# Lifelines
 
 ## CATDOG - NDM 참여작들
 
@@ -16,7 +16,16 @@
 1. Being Cooked - https://github.com/Merseong/Being-Cooked
 2. Grand Master HANd (VR) - https://github.com/Merseong/Grand-Master-HANd
 
-## 게임잼 개발작들
+## 2019 잼 게임잼 개발작들
 
-1. 이별싸움 (2019 잼 게임잼) - https://github.com/Merseong/TwoStarsFight
-2. SpaceTollgate (2019 잼 게임잼) - https://github.com/lhy0718/SpaceTollgate
+1. 이별싸움 (기획, 프로그래머) - https://github.com/Merseong/TwoStarsFight
+2. SpaceTollgate (프로그래머) - https://github.com/lhy0718/SpaceTollgate
+
+## 2019 정보대학 SW 전공동아리 학술대회
+
+Unity 연습 프로젝트 - https://github.com/Merseong/Touching-Unity-Example
+
+## 2020 군장병 공개SW 온라인 해커톤
+
+ROKTION (풀스택) - https://github.com/osamhack2020/WEB_ROKTION_Yeonghon-s-Matdai
+( forked: https://github.com/Merseong/WEB_ROKTION_Yeonghon-s-Matdai )
