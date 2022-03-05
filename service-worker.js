@@ -1,8 +1,15 @@
 const _version = "v1";
-const cacheName = "v1";
+const cacheName = "v2";
 const cacheList = [
-  "/src/app.js",
-  "/manifest.webmanifest"
+  "/manifest.webmanifest",
+  "/images/1.png",
+  "/images/733553.png",
+  "/images/favicon.png",
+  "/images/logo.png",
+  "/nicepage.js",
+  "/jquery.js",
+  "/nicepage.css",
+  "/Home.css",
 ];
 
 function log(msg) {
