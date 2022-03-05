@@ -20,15 +20,15 @@ if ("serviceWorker" in navigator) {
 $(function () {
   let deferredPrompt;
   const addBtn = $("#myButton");
-  addBtn.css("display", "none");
+  addBtn.css("hidden", "true");
 
   window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    addBtn.css("display", "table");
+    addBtn.css("hidden", "false");
 
     addBtn.click(function () {
-      addBtn.css("display", "none");
+      addBtn.css("hidden", "true");
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === "accepted") {
