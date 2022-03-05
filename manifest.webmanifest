@@ -1,0 +1,16 @@
+{
+  "name": "Merseong.io",
+  "short_name": "Merseong",
+  "description": "Ya-Ho",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "logo/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "theme_color": "black",
+  "background_color": "gray"
+}
