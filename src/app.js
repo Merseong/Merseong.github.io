@@ -18,6 +18,7 @@ if ("serviceWorker" in navigator) {
 }
 
 $(function () {
+  // install pwa
   let deferredPrompt;
   const addBtn = $("#myButton");
   addBtn.css("hidden", "true");
@@ -40,4 +41,16 @@ $(function () {
       });
     });
   });
+
+  // timer in center
+  const counter = $("#timeCount");
+  let counterIntervalId = setInterval(() => {
+    counter.html(Date.now());
+  }, 10);
+  counter.click(() => {
+    if (counterIntervalId > 0) {
+      clearInterval(counterIntervalId);
+    }
+    counterIntervalId = -1;
+  })
 });
