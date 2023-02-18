@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-deck-build-alkkagi-0.1";
 const contentToCache = [
-    "Build/test6.loader.js",
-    "Build/test6.framework.js",
-    "Build/test6.data",
-    "Build/test6.wasm",
+    "Build/test2.loader.js",
+    "Build/test2.framework.js",
+    "Build/test2.data",
+    "Build/test2.wasm",
     "TemplateData/style.css"
 
 ];
