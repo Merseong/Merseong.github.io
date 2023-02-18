@@ -7,7 +7,7 @@ const contentToCache = [
     "TemplateData/style.css"
 
 ];
-
+/*
 self.addEventListener('install', function (e) {
     console.log('[Service Worker] Install');
     
@@ -30,4 +30,4 @@ self.addEventListener('fetch', function (e) {
       cache.put(e.request, response.clone());
       return response;
     })());
-});
+});*/
