@@ -1,13 +1,13 @@
 const cacheName = "DefaultCompany-deck-build-alkkagi-0.1";
 const contentToCache = [
-    "Build/test2.loader.js",
-    "Build/test2.framework.js",
-    "Build/test2.data",
-    "Build/test2.wasm",
+    "Build/test.loader.js",
+    "Build/test.framework.js",
+    "Build/test.data",
+    "Build/test.wasm",
     "TemplateData/style.css"
 
 ];
-/*
+
 self.addEventListener('install', function (e) {
     console.log('[Service Worker] Install');
     
@@ -30,4 +30,4 @@ self.addEventListener('fetch', function (e) {
       cache.put(e.request, response.clone());
       return response;
     })());
-});*/
+});
