@@ -10,7 +10,7 @@
   </head>
   <body>
     <div id="unity-container">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=1440 height=3200 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -67,6 +67,23 @@
         productName: "pipe-tiles",
         productVersion: "0.1",
         showBanner: unityShowBanner,
+        cacheControl: function (url) {
+          // Caching enabled for .data and .bundle files.
+          // Revalidate if file is up to date before loading from cache
+          if (url.match(/\.data/) || url.match(/\.bundle/)) {
+              return "must-revalidate";
+          }
+
+          // Caching enabled for .mp4 and .custom files
+          // Load file from cache without revalidation.
+          if (url.match(/\.mp4/) || url.match(/\.custom/)) {
+              return "immutable";
+          }
+      
+          // Disable explicit caching for all other files.
+          // Note: the default browser cache may cache them anyway.
+          return "no-store";
+        },
       };
 
       // By default Unity keeps WebGL canvas render target size matched with
