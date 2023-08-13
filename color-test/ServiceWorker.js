@@ -1,4 +1,4 @@
-const cacheName = "ARRKKA-ColorMinesweeper-0.0.464";
+const cacheName = "ARRKKA-ColorMinesweeper-0.0.468";
 const contentToCache = [
     "Build/WebGL.loader.js",
     "Build/WebGL.framework.js",
