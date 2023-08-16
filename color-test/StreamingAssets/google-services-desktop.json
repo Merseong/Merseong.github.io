@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:306978592050:android:c9e4101c94e8fea161b32b",
+        "mobilesdk_app_id": "1:306978592050:android:7299eecc68ee455261b32b",
         "android_client_info": {
-          "package_name": "com.ARRKKA.ColorMinesweeper"
+          "package_name": "com.arrkka.ColorSweeper"
         }
       },
       "oauth_client": [
         {
-          "client_id": "306978592050-agef9e26osvu3t5r9qi1cdlmat3hfnnk.apps.googleusercontent.com",
+          "client_id": "306978592050-vi909sshtn5r6rkk4blkm3pplpp403un.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.ARRKKA.ColorMinesweeper",
+            "package_name": "com.arrkka.ColorSweeper",
             "certificate_hash": "3dbdbb3e50feddafc6341b94f5eb34dd8b00049e"
           }
         },
