@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello John Titor!</title>
+
+        <style>
+            html, div {
+                display: flex;
+                justify-content: center;
+            }
+
+            button {
+                margin: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Talk with Titor!</h1>
+
+        <textarea id="from" rows="3" cols="50"></textarea>
+
+        <br>
+        <div>
+            <button id="convertToStr">From Titor!</button>
+            <button id="convertToHex">Like Titor!</button>
+        </div>
+        <br>
+
+        <textarea disabled id="to" rows="3" cols="50"></textarea>
+
+        <p>* Languages ​​other than English may not be translated properly.</p>
+
+        <script>
+            const fromTextArea = document.getElementById("from");
+            const toTextArea = document.getElementById("to");
+            const strBtn = document.getElementById("convertToStr");
+            const hexBtn = document.getElementById("convertToHex");
+
+            strBtn.addEventListener("click", () => {
+                const fullStr = fromTextArea.value.replace(/\s/g, '');
+                const outputArr = [];
+                let outputStr = "";
+
+                try {
+                    for (let i = 0; i < fullStr.length; i += 2) {
+                        const hexStr = `0x${fullStr[i]}${fullStr[i + 1]}`;
+                        const wordInt = parseInt(hexStr, 16);
+                        const word = String.fromCharCode(wordInt);
+                        outputArr.push(word);
+                    }
+                    outputStr = outputArr.join('');
+                } catch (err) {
+                    outputStr = "변환에 실패했습니다";
+                } finally {
+                    toTextArea.value = outputStr;
+                }
+            });
+
+            hexBtn.addEventListener("click", () => {
+                const fullStr = fromTextArea.value;
+                const outputArr = [];
+                let outputStr = "";
+
+                try {
+                    for (let i = 0; i < fullStr.length; i++) {
+                        const hexStr = fullStr[i];
+                        outputArr.push(hexStr.charCodeAt(0).toString(16));
+                    }
+                    outputStr = outputArr.join('').toUpperCase();
+                } catch (err) {
+                    outputStr = "변환에 실패했습니다";
+                } finally {
+                    toTextArea.value = outputStr;
+                }
+            })
+        </script>
+    </body>
+</html>
